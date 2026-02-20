@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import stripeConfig from "../config/stripe";
 
 const Success = () => {
   const [searchParams] = useSearchParams();
@@ -22,8 +23,9 @@ const Success = () => {
 
   const fetchOrderDetails = async () => {
     try {
+      const apiUrl = stripeConfig.apiUrl || "http://localhost:8001";
       const response = await axios.get(
-        `http://localhost:8001/api/orders/session/${sessionId}`
+        `${apiUrl}/api/orders/session/${sessionId}`
       );
       setOrder(response.data.order);
       setLoading(false);
