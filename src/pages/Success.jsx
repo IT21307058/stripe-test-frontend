@@ -189,24 +189,37 @@ const Success = () => {
           </div>
         </div>
 
-        {/* Thank You Message */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md p-8 mb-6 border-l-4 border-blue-600">
-          <div className="text-center">
-            <p className="text-lg text-gray-800 leading-relaxed">
-              "I appreciate your business. Thank you for your purchase.
-            </p>
-            <p className="mt-4 text-lg text-gray-800 leading-relaxed">
-              Was there something I could have done differently, to improve your
-              customer satisfaction?
-            </p>
-            <p className="mt-4 text-lg text-gray-800 leading-relaxed">
-              I look forward to serving you again."
-            </p>
-            <p className="mt-6 text-xl font-semibold text-blue-900">
-              – Preethi Fernando
-            </p>
+        {/* Thank You / Class Message */}
+        {order.productType === 'ai-mastery' ? (
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md p-8 mb-6 border-l-4 border-blue-600">
+            <div className="text-center">
+              <p className="text-lg text-gray-800 leading-relaxed">
+                Hi, I am Preethi Fernando. So glad you registered for my class. You will receive the Zoom link soon.
+              </p>
+              <p className="mt-6 text-xl font-semibold text-blue-900">
+                – Preethi Fernando
+              </p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-md p-8 mb-6 border-l-4 border-blue-600">
+            <div className="text-center">
+              <p className="text-lg text-gray-800 leading-relaxed">
+                "I appreciate your business. Thank you for your purchase.
+              </p>
+              <p className="mt-4 text-lg text-gray-800 leading-relaxed">
+                Was there something I could have done differently, to improve your
+                customer satisfaction?
+              </p>
+              <p className="mt-4 text-lg text-gray-800 leading-relaxed">
+                I look forward to serving you again."
+              </p>
+              <p className="mt-6 text-xl font-semibold text-blue-900">
+                – Preethi Fernando
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Email Receipt Notice */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
